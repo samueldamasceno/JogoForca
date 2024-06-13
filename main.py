@@ -1,5 +1,6 @@
 # jogo da forca em python
 import random
+import palavras
 
 def bem_vindo():
     print("====== JOGO DA FORCA ======")
@@ -43,20 +44,34 @@ def regras():
     print()
 
 def sortear_palavra():
-    palavras = [
-        "amarelo",
-        "azul",
-        "vermelho",
-        "verde",
-        "rosa",
-        "laranja",
-        "roxo",
-        "preto",
-        "branco",
-        "cinza",
-        "marrom",
-    ]
-    palavra_secreta = random.choice(palavras)
+    print("""Escolha um tema para o nosso jogo começar: 
+          1. Cores
+          2. Frutas
+          3. Nomes
+          4. Animais
+          5. Países""")
+
+    while True:
+        tema = input("Digite a opção que deseja: ")
+        if tema == "1":
+            palavra_secreta = random.choice(palavras.cores)
+            break
+        elif tema == "2":
+            palavra_secreta = random.choice(palavras.frutas)
+            break
+        elif tema == "3":
+            palavra_secreta = random.choice(palavras.nomes)
+            break
+        elif tema == "4":
+            palavra_secreta = random.choice(palavras.animais)
+            break
+        elif tema == "5":
+            palavra_secreta = random.choice(palavras.paises)
+            break
+        else:
+            print("Opção inválida! Por favor, escolha uma opção válida.")
+            digite_enter()
+
     return palavra_secreta
 
 def mostrar_palavra(letras_palavra):
@@ -87,11 +102,13 @@ def digite_enter():
 
 def jogo_forca():
     bem_vindo()
-    palavra_secreta = sortear_palavra()
+
     print("JOGO DA FORCA")
     print()
 
     vidas = 5
+
+    palavra_secreta = sortear_palavra()
     letras_palavra = ["_"] * len(palavra_secreta)
     letras_erradas = []
 
@@ -122,7 +139,6 @@ def jogo_forca():
                 letras_erradas.append(chute)
                 vidas -= 1
                 print(f"A palavra secreta não tem a letra '{chute}'")
-                digite_enter()
 
         elif len(chute) > 1:
             if chute == palavra_secreta:
@@ -132,7 +148,6 @@ def jogo_forca():
             else:
                 vidas -= 1
                 print(f"Você errou! A palavra secreta não é '{chute}'")
-                digite_enter()
         
         print()
 
