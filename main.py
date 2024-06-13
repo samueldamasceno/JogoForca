@@ -119,18 +119,23 @@ def jogo_forca():
         mostrar_letras_erradas(letras_erradas)
     
         print("Digite uma letra ou chute a palavra:")
-        chute = input().lower()
+        chute = input()
 
         if len(chute) == 1:
+            chute = chute.lower()
+
             if chute in letras_palavra or chute in letras_erradas:
                 print("Você já chutou essa letra.")
                 digite_enter()
                 continue
 
-            if chute in palavra_secreta:
-                for i in range(len(palavra_secreta)):
-                    if palavra_secreta[i] == chute:
-                        letras_palavra[i] = chute
+            acertou = False
+            for i in range(len(palavra_secreta)):
+                if palavra_secreta[i].lower() == chute:
+                    letras_palavra[i] = palavra_secreta[i]
+                    acertou = True
+
+            if acertou:
                 if "_" not in letras_palavra:
                     vitoria(palavra_secreta)
                     digite_enter()
@@ -141,7 +146,7 @@ def jogo_forca():
                 print(f"A palavra secreta não tem a letra '{chute}'")
 
         elif len(chute) > 1:
-            if chute == palavra_secreta:
+            if chute.lower() == palavra_secreta.lower():
                 vitoria(palavra_secreta)
                 digite_enter()
                 break
