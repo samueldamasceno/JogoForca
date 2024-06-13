@@ -59,6 +59,29 @@ def sortear_palavra():
     palavra_secreta = random.choice(palavras)
     return palavra_secreta
 
+def mostrar_palavra(letras_palavra):
+    print("Palavra secreta: ", end="")
+    for letra in letras_palavra:
+        print(letra, end=" ")
+    print()
+
+def mostrar_letras_erradas(letras_erradas):
+    if len(letras_erradas) > 0:
+        print("Letras erradas: ", end="")
+        for letra in letras_erradas:
+            print(letra, end=" ")
+        print()
+
+def vitoria(palavra):
+    print()
+    print(f"Parabéns! A palavra secreta era '{palavra}'. Você acertou!")
+    print()
+
+def derrota(palavra):
+    print()
+    print(f"Você perdeu! A palavra secreta era '{palavra}'.")
+    print()
+
 def jogo_forca():
     bem_vindo()
     palavra_secreta = sortear_palavra()
@@ -66,23 +89,14 @@ def jogo_forca():
     print()
 
     vidas = 5
-
     letras_palavra = ["_"] * len(palavra_secreta)
     letras_erradas = []
 
     while vidas > 0:
         print(f"Você possui {vidas} vidas")
         
-        print("Palavra secreta: ", end="")
-        for letra in letras_palavra:
-            print(letra, end=" ")
-        print()
-
-        if len(letras_erradas) > 0:
-            print("Letras erradas: ", end="")
-            for letra in letras_erradas:
-                print(letra, end=" ")
-            print()
+        mostrar_palavra(letras_palavra)
+        mostrar_letras_erradas(letras_erradas)
     
         print("Digite uma letra ou chute a palavra:")
         chute = input().lower()
@@ -97,9 +111,7 @@ def jogo_forca():
                     if palavra_secreta[i] == chute:
                         letras_palavra[i] = chute
                 if "_" not in letras_palavra:
-                    print()
-                    print(f"Parabéns! A palavra secreta era '{palavra_secreta}'. Você acertou!")
-                    print()
+                    vitoria(palavra_secreta)
                     break
             else:
                 letras_erradas.append(chute)
@@ -108,18 +120,15 @@ def jogo_forca():
 
         elif len(chute) > 1:
             if chute == palavra_secreta:
-                print()
-                print(f"Parabéns! A palavra secreta era '{palavra_secreta}'. Você acertou!")
-                print()
+                vitoria(palavra_secreta)
                 break
             else:
                 vidas -= 1
-                print()
                 print(f"Você errou! A palavra secreta não é '{chute}'")
         
         print()
 
     if vidas == 0:
-        print(f"Você perdeu! A palavra secreta era '{palavra_secreta}'.")
+        derrota(palavra_secreta)
 
 jogo_forca()
