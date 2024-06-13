@@ -10,6 +10,15 @@ cores = [
     "branco",
     "cinza",
     "marrom",
+    "prata",
+    "ouro",
+    "bege",
+    "vinho",
+    "turquesa",
+    "salmao",
+    "rosa choque",
+    "violeta"
+    "ciano"
 ]
 
 animais = [
@@ -26,6 +35,40 @@ animais = [
     "vaca",
     "porco",
     "galinha",
+    "panda",
+    "leao",
+    "girafa",
+    "zebra",
+    "peixe",
+    "pinguim",
+    "abelha",
+    "borboleta",
+    "formiga",
+    "aranha",
+    "mosquito",
+    "aguia",
+    "coruja",
+    "pombo",
+    "gaivota",
+    "pica-pau",
+    "andorinha",
+    "salmao",
+    "baleia",
+    "tubarao",
+    "polvo",
+    "estrela-do-mar",
+    "caranguejo",
+    "girino",
+    "lagosta",
+    "mosca",
+    "libelula",
+    "lagartixa",
+    "tamandua",
+    "hiena",
+    "tigre",
+    "cobra",
+    "sapo",
+    "camarao"
 ]
 
 frutas = [
@@ -42,6 +85,13 @@ frutas = [
     "manga",
     "morango",
     "pessego",
+    "limao",
+    "cereja",
+    "figo",
+    "pitaya",
+    "melao",
+    "amora",
+    "framboesa"
 ]
 
 paises = [
@@ -75,6 +125,12 @@ paises = [
     "Venezuela",
     "Vietna",
     "Zimbabue",
+    "India",
+    "Nova Zelandia",
+    "Irlanda",
+    "Turquia",
+    "Singapura",
+    "Malasia"
 ]
 
 nomes = [
@@ -105,5 +161,16 @@ nomes = [
     "Vinicius",
     "Yasmin",
     "Yuri",
-    "Zoe"
+    "Lara",
+    "Lucas",
+    "Julia",
+    "Camila",
+    "Gustavo",
+    "Mariana",
+    "Diego",
+    "Carolina",
+    "Luciana",
+    "Marcos",
+    "Antonio",
+    "Leticia"
 ]
