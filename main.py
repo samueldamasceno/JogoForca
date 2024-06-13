@@ -141,4 +141,3 @@ def jogo_forca():
         digite_enter()
 
 jogo_forca()
-]
