@@ -82,6 +82,9 @@ def derrota(palavra):
     print(f"Você perdeu! A palavra secreta era '{palavra}'.")
     print()
 
+def digite_enter():
+    input("Digite ENTER para continuar")
+
 def jogo_forca():
     bem_vindo()
     palavra_secreta = sortear_palavra()
@@ -104,6 +107,7 @@ def jogo_forca():
         if len(chute) == 1:
             if chute in letras_palavra or chute in letras_erradas:
                 print("Você já chutou essa letra.")
+                digite_enter()
                 continue
 
             if chute in palavra_secreta:
@@ -112,23 +116,29 @@ def jogo_forca():
                         letras_palavra[i] = chute
                 if "_" not in letras_palavra:
                     vitoria(palavra_secreta)
+                    digite_enter()
                     break
             else:
                 letras_erradas.append(chute)
                 vidas -= 1
                 print(f"A palavra secreta não tem a letra '{chute}'")
+                digite_enter()
 
         elif len(chute) > 1:
             if chute == palavra_secreta:
                 vitoria(palavra_secreta)
+                digite_enter()
                 break
             else:
                 vidas -= 1
                 print(f"Você errou! A palavra secreta não é '{chute}'")
+                digite_enter()
         
         print()
 
     if vidas == 0:
         derrota(palavra_secreta)
+        digite_enter()
 
 jogo_forca()
+]
