@@ -60,12 +60,36 @@ def sortear_palavra():
 def jogo_forca():
     bem_vindo()
     palavra_secreta = sortear_palavra()
-    print("PRIMEIRA PARTIDA")
-    for i in range(0, len(palavra_secreta)):
-        print("_", end=" ")
+    print("JOGO DA FORCA")
     print()
-    print("Digite uma letra ou chute a palavra")
-    print()
+
+    vidas = 5
+    while vidas > 0:
+        print(f"Você possui {vidas} vidas")
+        print()
+
+        for i in range(0, len(palavra_secreta)):
+            print("_", end=" ")
+        print()
+        print("Digite uma letra ou chute a palavra")
+        chute = input()
+        if len(chute) > 1:
+            if chute == palavra_secreta:
+                print()
+                print(f"Parabéns! A palavra secreta era {palavra_secreta}. Você acertou!")
+                print()
+                break
+            else:
+                print()
+                print(f"Você errou! A palavra secreta não é {chute}")
+                print()
+                vidas -= 1
+                continue
+        elif len(chute) < 1:
+            print()
+            print("Digite uma letra ou chute a palavra")
+            continue
+
 
 
 jogo_forca()
