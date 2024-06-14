@@ -162,4 +162,22 @@ def jogo_forca():
         derrota(palavra_secreta)
         digite_enter()
 
-jogo_forca()
+while True:
+    jogo_forca()
+    print()
+    while True:
+        print("""Deseja jogar novamente?
+            1. Sim
+            2. Não""")
+        opcao = input()
+        if opcao == "1":
+            print()
+            break
+        elif opcao == "2":
+            print("Obrigado por ter jogado!")
+            exit()
+        else:
+            print()
+            print("Opção inválida!")
+            print()
+            continue
