@@ -17,7 +17,7 @@ cores = [
     "turquesa",
     "salmao",
     "rosa choque",
-    "violeta"
+    "violeta",
     "ciano"
 ]
 
