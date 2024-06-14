@@ -1,6 +1,7 @@
 # jogo da forca em python
 import random
 import palavras
+import os
 
 def bem_vindo():
     print("====== JOGO DA FORCA ======")
@@ -101,6 +102,7 @@ def digite_enter():
     input("Digite ENTER para continuar")
 
 def jogo_forca():
+    os.system('cls' if os.name == 'nt' else 'clear')
     bem_vindo()
 
     print("JOGO DA FORCA")
